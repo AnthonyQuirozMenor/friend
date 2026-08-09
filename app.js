@@ -148,6 +148,7 @@ function renderIndicators() {
  * Abrir un pétalo específico en el Modal
  */
 function openPetal(index) {
+  playMusic();
   state.currentPetalIndex = index;
   const data = petalsData[index];
 
@@ -377,6 +378,7 @@ animateParticles();
 initFlower();
 
 /**
+/**
  * ==========================================================================
  * Control de Música de Fondo
  * ==========================================================================
@@ -384,42 +386,51 @@ initFlower();
 const bgMusic = document.getElementById('bg-music');
 const musicBtn = document.getElementById('music-btn');
 
-if (bgMusic && musicBtn) {
-  bgMusic.volume = 0.5; // Volumen agradable al 50%
-
-  function toggleMusic() {
-    if (bgMusic.paused) {
-      bgMusic.play().then(() => {
-        musicBtn.classList.add('playing');
+function playMusic() {
+  if (bgMusic && bgMusic.paused) {
+    bgMusic.volume = 0.6;
+    const playPromise = bgMusic.play();
+    if (playPromise !== undefined) {
+      playPromise.then(() => {
+        if (musicBtn) musicBtn.classList.add('playing');
       }).catch(err => {
-        console.log("Audio playback blocked by browser:", err);
+        console.log("El navegador requiere un clic del usuario para reproducir audio:", err);
       });
-    } else {
-      bgMusic.pause();
-      musicBtn.classList.remove('playing');
     }
   }
+}
 
+function pauseMusic() {
+  if (bgMusic && !bgMusic.paused) {
+    bgMusic.pause();
+    if (musicBtn) musicBtn.classList.remove('playing');
+  }
+}
+
+function toggleMusic() {
+  if (!bgMusic) return;
+  if (bgMusic.paused) {
+    playMusic();
+  } else {
+    pauseMusic();
+  }
+}
+
+if (musicBtn) {
   musicBtn.addEventListener('click', (e) => {
     e.stopPropagation();
     toggleMusic();
   });
-
-  // Iniciar automáticamente con la primera interacción del usuario
-  let hasStartedMusic = false;
-  function startMusicOnFirstInteraction() {
-    if (!hasStartedMusic) {
-      hasStartedMusic = true;
-      bgMusic.play().then(() => {
-        musicBtn.classList.add('playing');
-      }).catch(() => {
-        // Si el navegador requiere clic directo en el botón
-      });
-      window.removeEventListener('click', startMusicOnFirstInteraction);
-      window.removeEventListener('touchstart', startMusicOnFirstInteraction);
-    }
-  }
-
-  window.addEventListener('click', startMusicOnFirstInteraction, { once: true });
-  window.addEventListener('touchstart', startMusicOnFirstInteraction, { once: true });
 }
+
+// Iniciar música en la primera interacción en cualquier parte de la pantalla
+const handleInitialInteraction = () => {
+  playMusic();
+  document.removeEventListener('click', handleInitialInteraction);
+  document.removeEventListener('touchstart', handleInitialInteraction);
+  document.removeEventListener('keydown', handleInitialInteraction);
+};
+
+document.addEventListener('click', handleInitialInteraction, { capture: true, once: true });
+document.addEventListener('touchstart', handleInitialInteraction, { capture: true, once: true });
+document.addEventListener('keydown', handleInitialInteraction, { capture: true, once: true });
