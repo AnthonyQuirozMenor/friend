@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Una Flor Para Ti 🌸</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Fondo con partículas y luces ambientales -->
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+  <div class="ambient-glow glow-3"></div>
+  <canvas id="particles-canvas"></canvas>
+
+  <main class="app-container">
+    <!-- Encabezado principal -->
+    <header class="header">
+      <div class="badge-tag">✨ Un detalle especial para ti</div>
+      <h1 class="main-title">Toca cada pétalo</h1>
+      <p class="subtitle">Descubre los 7 recuerdos y mensajes que guardé para ti en esta flor</p>
+      
+      <!-- Contador de progreso -->
+      <div class="progress-container">
+        <div class="progress-bar-bg">
+          <div id="progress-bar" class="progress-bar-fill"></div>
+        </div>
+        <span id="progress-text" class="progress-label">0 de 7 pétalos descubiertos</span>
+      </div>
+    </header>
+
+    <!-- Escenario de la Flor -->
+    <section class="flower-stage">
+      <div class="flower-wrapper" id="flower-container">
+        
+        <!-- Tallo y hojas decorativas -->
+        <div class="stem"></div>
+        <div class="leaf leaf-left"></div>
+        <div class="leaf leaf-right"></div>
+
+        <!-- Grupo de 7 Pétalos -->
+        <div class="petals-group" id="petals-group">
+          <!-- Los pétalos se generan mediante JS con rotación exacta -->
+        </div>
+
+        <!-- Centro de la Flor -->
+        <button class="flower-center" id="flower-center" title="Toca el centro de la flor">
+          <div class="center-inner">
+            <span class="center-icon">✨</span>
+          </div>
+          <div class="center-pulse"></div>
+        </button>
+
+      </div>
+    </section>
+
+    <!-- Pie de página con botón de reinicio/mensaje -->
+    <footer class="footer">
+      <p class="hint-text">💡 Toca o haz clic en cada pétalo para abrir su recuerdo</p>
+    </footer>
+  </main>
+
+  <!-- Modal para mostrar Foto y Mensaje del Pétalo -->
+  <div class="modal-overlay" id="memory-modal" aria-hidden="true">
+    <div class="modal-backdrop" id="modal-backdrop"></div>
+    <div class="modal-card">
+      <button class="modal-close-btn" id="modal-close" aria-label="Cerrar ventana">
+        <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <div class="modal-header">
+        <span class="modal-petal-badge" id="modal-petal-badge">Pétalo 1 de 7</span>
+      </div>
+
+      <div class="modal-body">
+        <!-- Contenedor de la Imagen -->
+        <div class="modal-image-wrapper">
+          <img id="modal-img" src="" alt="Recuerdo especial" class="modal-img">
+          <div id="modal-img-fallback" class="img-fallback">
+            <span class="fallback-icon">🌸</span>
+            <span class="fallback-text">Recuerdo especial</span>
+          </div>
+        </div>
+
+        <!-- Texto y Dedicatoria -->
+        <div class="modal-content-area">
+          <h2 class="modal-title" id="modal-title">Título del Recuerdo</h2>
+          <div class="modal-divider"></div>
+          <p class="modal-description" id="modal-desc">Texto del mensaje especial para tu amiga...</p>
+        </div>
+      </div>
+
+      <!-- Navegación entre pétalos -->
+      <div class="modal-footer">
+        <button class="nav-btn prev-btn" id="modal-prev-btn">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+          Anterior
+        </button>
+        <div class="petals-indicators" id="modal-indicators"></div>
+        <button class="nav-btn next-btn" id="modal-next-btn">
+          Siguiente
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Especial al Completar los 7 Pétalos -->
+  <div class="modal-overlay" id="congrats-modal" aria-hidden="true">
+    <div class="modal-backdrop" id="congrats-backdrop"></div>
+    <div class="modal-card congrats-card">
+      <div class="congrats-icon-box">💖</div>
+      <h2 class="congrats-title">¡Descubriste todos los pétalos!</h2>
+      <p class="congrats-message">
+        Cada uno de estos 7 pétalos representa lo valiosa que es tu amistad para mí. ¡Gracias por ser una persona tan especial e increíble en mi vida!
+      </p>
+      <button class="action-btn" id="congrats-close-btn">Cerrar con cariño ✨</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
