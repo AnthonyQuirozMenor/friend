@@ -25,10 +25,20 @@
         <span></span><span></span><span></span>
       </div>
     </button>
-    <audio id="bg-music" loop preload="auto" playsinline>
+    <audio id="bg-music" autoplay loop preload="auto" playsinline>
       <source src="musica.mp3" type="audio/mpeg">
       <source src="Homage - Mild High Club (Traducida al español).mp3" type="audio/mpeg">
     </audio>
+  </div>
+
+  <!-- Pantalla de Bienvenida para asegurar la música desde el primer segundo -->
+  <div id="start-overlay" class="start-overlay">
+    <div class="start-card">
+      <div class="start-icon">🌸</div>
+      <h2 class="start-title">Un detalle para ti</h2>
+      <p class="start-subtitle">Toca el botón para abrir tu flor</p>
+      <button class="start-btn" id="start-btn">Abrir con Música ✨</button>
+    </div>
   </div>
 
   <main class="app-container">

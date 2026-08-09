@@ -378,23 +378,25 @@ animateParticles();
 initFlower();
 
 /**
-/**
  * ==========================================================================
- * Control de Música de Fondo
+ * Control de Música de Fondo y Pantalla de Inicio
  * ==========================================================================
  */
 const bgMusic = document.getElementById('bg-music');
 const musicBtn = document.getElementById('music-btn');
+const startOverlay = document.getElementById('start-overlay');
+const startBtn = document.getElementById('start-btn');
 
 function playMusic() {
-  if (bgMusic && bgMusic.paused) {
+  if (bgMusic) {
     bgMusic.volume = 0.6;
     const playPromise = bgMusic.play();
     if (playPromise !== undefined) {
       playPromise.then(() => {
         if (musicBtn) musicBtn.classList.add('playing');
+        if (startOverlay) startOverlay.classList.add('hidden');
       }).catch(err => {
-        console.log("El navegador requiere un clic del usuario para reproducir audio:", err);
+        console.log("Esperando toque del usuario para iniciar música:", err);
       });
     }
   }
@@ -423,9 +425,31 @@ if (musicBtn) {
   });
 }
 
-// Iniciar música en la primera interacción en cualquier parte de la pantalla
+// Iniciar al tocar el botón de bienvenida
+if (startBtn) {
+  startBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    playMusic();
+    if (startOverlay) startOverlay.classList.add('hidden');
+  });
+}
+
+if (startOverlay) {
+  startOverlay.addEventListener('click', () => {
+    playMusic();
+    startOverlay.classList.add('hidden');
+  });
+}
+
+// Intentar autoplay automático de inmediato
+window.addEventListener('load', () => {
+  playMusic();
+});
+
+// Fallback en cualquier interacción
 const handleInitialInteraction = () => {
   playMusic();
+  if (startOverlay) startOverlay.classList.add('hidden');
   document.removeEventListener('click', handleInitialInteraction);
   document.removeEventListener('touchstart', handleInitialInteraction);
   document.removeEventListener('keydown', handleInitialInteraction);
