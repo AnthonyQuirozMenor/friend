@@ -101,9 +101,6 @@ function initFlower() {
 
     petalEl.innerHTML = `
       <div class="petal-shape">
-        <div class="petal-photo-circle">
-          <img src="${petal.image}" alt="Recuerdo ${petal.id}" class="petal-thumb-img">
-        </div>
         <span class="petal-number">${petal.id}</span>
         <span class="petal-status-icon">✨</span>
       </div>
