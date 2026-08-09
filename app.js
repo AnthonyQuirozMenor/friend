@@ -9,44 +9,44 @@
 const petalsData = [
   {
     id: 1,
-    title: "1. Nuestra Gran Amistad",
-    text: "Gracias por estar presente en cada momento, por tus risas y por ser esa persona en quien siempre puedo confiar.",
-    image: "foto/foto1.jpg" // Puedes colocar tu foto aquí
+    title: "1. Como una Hermana Mayor",
+    text: "Gracias por cuidarme, por tus buenos consejos y por estar siempre ahí como esa hermana mayor que la vida me regaló.",
+    image: "foto/n1.jpg"
   },
   {
     id: 2,
     title: "2. Momentos Inolvidables",
-    text: "Cada anécdota, cada plática y cada locura compartida son tesoros que guardo con muchísimo cariño.",
-    image: "foto/foto2.jpg"
+    text: "Cada risa compartida, cada plática y cada aventura juntos son recuerdos que atesoro con todo el corazón.",
+    image: "foto/n2.jpg"
   },
   {
     id: 3,
     title: "3. Tu Gran Corazón",
-    text: "Admiro tu bondad, tu alegría contagiosa y la forma en que siempre iluminas el día de los que te rodean.",
+    text: "Admiro tu forma de ser, tu paciencia y la luz que siempre transmites. Eres un pilar muy importante para mí.",
     image: "foto/foto3.jpg"
   },
   {
     id: 4,
     title: "4. Apoyo Incondicional",
-    text: "En los días buenos y en los no tan buenos, saber que cuento con tu apoyo hace todo mucho más fácil.",
+    text: "En los momentos buenos y en los difíciles, saber que puedo confiar en ti me da una tranquilidad enorme.",
     image: "foto/foto4.jpg"
   },
   {
     id: 5,
-    title: "5. Risas que no se olvidan",
-    text: "Por todas esas veces que no podíamos parar de reír hasta que nos dolía la panza. ¡Que vengan muchas más!",
+    title: "5. Risas y Complicidad",
+    text: "Por todas las anécdotas locas que solo tú y yo entendemos. ¡Nadie se ríe de las cosas como nosotros!",
     image: "foto/foto5.jpg"
   },
   {
     id: 6,
-    title: "6. Por lo que Eres",
-    text: "Nunca cambies tu esencia única. Eres una persona verdaderamente increíble y muy especial.",
+    title: "6. Por Ser Tan Auténtica",
+    text: "Gracias por ser siempre tú: transparente, divertida, sincera y con un corazón enorme.",
     image: "foto/foto6.jpg"
   },
   {
     id: 7,
-    title: "7. Por Nuestro Futuro",
-    text: "Por todos los planes, viajes, metas y recuerdos que aún nos faltan por vivir juntos. ¡Siempre contarás conmigo!",
+    title: "7. Por Más Años Juntos",
+    text: "Que nuestra amistad siga creciendo con el tiempo. ¡Siempre contarás conmigo incondicionalmente!",
     image: "foto/foto7.jpg"
   }
 ];
