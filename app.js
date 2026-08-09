@@ -9,44 +9,44 @@
 const petalsData = [
   {
     id: 1,
-    title: "1. Como una Hermana Mayor",
-    text: "Gracias por cuidarme, por tus buenos consejos y por estar siempre ahí como esa hermana mayor que la vida me regaló.",
+    title: "1. Mi Hermana de Corazón",
+    text: "Dicen que los amigos son la familia que uno elige, y en ti encontré a esa hermana mayor que siempre me cuida, me guía y me hace sentir seguro. Gracias por estar presente en mi vida.",
     image: "foto/n1.jpg"
   },
   {
     id: 2,
-    title: "2. Momentos Inolvidables",
-    text: "Cada risa compartida, cada plática y cada aventura juntos son recuerdos que atesoro con todo el corazón.",
+    title: "2. Recuerdos que Valen Oro",
+    text: "Cada foto, cada salida y cada plática interminable son tesoros que guardo con todo el cariño. Contigo hasta el día más simple se convierte en un recuerdo inolvidable.",
     image: "foto/n2.jpg"
   },
   {
     id: 3,
-    title: "3. Tu Gran Corazón",
-    text: "Admiro tu forma de ser, tu paciencia y la luz que siempre transmites. Eres un pilar muy importante para mí.",
+    title: "3. Tu Sabiduría y Consejos",
+    text: "Admiro tu madurez, tu paciencia y tu gran corazón. Cuando las cosas se ponen difíciles, tus palabras siempre me transmiten calma, claridad y el mejor consejo.",
     image: "foto/n3.jpg"
   },
   {
     id: 4,
-    title: "4. Apoyo Incondicional",
-    text: "En los momentos buenos y en los difíciles, saber que puedo confiar en ti me da una tranquilidad enorme.",
+    title: "4. Risas y Complicidad",
+    text: "Por todas esas risas espontáneas que nos dejan sin respiración y esas anécdotas que solo tú y yo entendemos. ¡No hay nadie en el mundo con quien me ría tanto como contigo!",
     image: "foto/n4.jpg"
   },
   {
     id: 5,
-    title: "5. Risas y Complicidad",
-    text: "Por todas las anécdotas locas que solo tú y yo entendemos. ¡Nadie se ríe de las cosas como nosotros!",
+    title: "5. Un Refugio de Confianza",
+    text: "Saber que puedo ser 100% yo mismo a tu lado es algo que no tiene precio. Gracias por escucharme sin juzgarme y por brindarme tu apoyo incondicional en todo momento.",
     image: "foto/n5.jpg"
   },
   {
     id: 6,
-    title: "6. Por Ser Tan Auténtica",
-    text: "Gracias por ser siempre tú: transparente, divertida, sincera y con un corazón enorme.",
+    title: "6. Tu Fuerza y Esencia Única",
+    text: "Eres una persona increíble, auténtica, luchadora y con una luz que alegra a todos a tu alrededor. Me inspiras muchísimo a ser mejor cada día.",
     image: "foto/n1.jpg"
   },
   {
     id: 7,
-    title: "7. Por Más Años Juntos",
-    text: "Que nuestra amistad siga creciendo con el tiempo. ¡Siempre contarás conmigo incondicionalmente!",
+    title: "7. Por Siempre en Mi Camino",
+    text: "Pase lo que pase y pasen los años que pasen, siempre podrás contar conmigo incondicionalmente. ¡Gracias por ser la mejor amiga y hermana mayor que pude desear!",
     image: "foto/n2.jpg"
   }
 ];
