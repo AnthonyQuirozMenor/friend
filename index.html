@@ -16,6 +16,18 @@
   <div class="ambient-glow glow-3"></div>
   <canvas id="particles-canvas"></canvas>
 
+  <!-- Botón flotante de Música -->
+  <div class="music-controller">
+    <button id="music-btn" class="music-btn" title="Reproducir / Pausar Música" aria-label="Música de fondo">
+      <span class="music-icon" id="music-icon">🎵</span>
+      <span class="music-text">Música</span>
+      <div class="music-waves" id="music-waves">
+        <span></span><span></span><span></span>
+      </div>
+    </button>
+    <audio id="bg-music" loop preload="auto" src="Homage%20-%20Mild%20High%20Club%20(Traducida%20al%20espa%C3%B1ol).mp3"></audio>
+  </div>
+
   <main class="app-container">
     <!-- Encabezado principal -->
     <header class="header">

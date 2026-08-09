@@ -378,3 +378,51 @@ animateParticles();
 
 // Iniciar aplicación
 initFlower();
+
+/**
+ * ==========================================================================
+ * Control de Música de Fondo
+ * ==========================================================================
+ */
+const bgMusic = document.getElementById('bg-music');
+const musicBtn = document.getElementById('music-btn');
+
+if (bgMusic && musicBtn) {
+  bgMusic.volume = 0.5; // Volumen agradable al 50%
+
+  function toggleMusic() {
+    if (bgMusic.paused) {
+      bgMusic.play().then(() => {
+        musicBtn.classList.add('playing');
+      }).catch(err => {
+        console.log("Audio playback blocked by browser:", err);
+      });
+    } else {
+      bgMusic.pause();
+      musicBtn.classList.remove('playing');
+    }
+  }
+
+  musicBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    toggleMusic();
+  });
+
+  // Iniciar automáticamente con la primera interacción del usuario
+  let hasStartedMusic = false;
+  function startMusicOnFirstInteraction() {
+    if (!hasStartedMusic) {
+      hasStartedMusic = true;
+      bgMusic.play().then(() => {
+        musicBtn.classList.add('playing');
+      }).catch(() => {
+        // Si el navegador requiere clic directo en el botón
+      });
+      window.removeEventListener('click', startMusicOnFirstInteraction);
+      window.removeEventListener('touchstart', startMusicOnFirstInteraction);
+    }
+  }
+
+  window.addEventListener('click', startMusicOnFirstInteraction, { once: true });
+  window.addEventListener('touchstart', startMusicOnFirstInteraction, { once: true });
+}
