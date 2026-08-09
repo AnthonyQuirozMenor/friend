@@ -23,31 +23,31 @@ const petalsData = [
     id: 3,
     title: "3. Tu Gran Corazón",
     text: "Admiro tu forma de ser, tu paciencia y la luz que siempre transmites. Eres un pilar muy importante para mí.",
-    image: "foto/foto3.jpg"
+    image: "foto/n3.jpg"
   },
   {
     id: 4,
     title: "4. Apoyo Incondicional",
     text: "En los momentos buenos y en los difíciles, saber que puedo confiar en ti me da una tranquilidad enorme.",
-    image: "foto/foto4.jpg"
+    image: "foto/n4.jpg"
   },
   {
     id: 5,
     title: "5. Risas y Complicidad",
     text: "Por todas las anécdotas locas que solo tú y yo entendemos. ¡Nadie se ríe de las cosas como nosotros!",
-    image: "foto/foto5.jpg"
+    image: "foto/n5.jpg"
   },
   {
     id: 6,
     title: "6. Por Ser Tan Auténtica",
     text: "Gracias por ser siempre tú: transparente, divertida, sincera y con un corazón enorme.",
-    image: "foto/foto6.jpg"
+    image: "foto/n6.jpg"
   },
   {
     id: 7,
     title: "7. Por Más Años Juntos",
     text: "Que nuestra amistad siga creciendo con el tiempo. ¡Siempre contarás conmigo incondicionalmente!",
-    image: "foto/foto7.jpg"
+    image: "foto/n7.jpg"
   }
 ];
 
